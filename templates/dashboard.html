@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h2>Welcome to Your Dashboard</h2>
+    <p><a href="/logout">Logout</a></p>
+
+    <h3>Add New Expense</h3>
+    <form method="POST">
+        <label>Description:</label><br>
+        <input type="text" name="description" required><br><br>
+
+        <label>Amount:</label><br>
+        <input type="number" name="amount" step="0.01" required><br><br>
+
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <h3>Your Expenses</h3>
+    <ul>
+        {% for expense in expenses %}
+            <li>{{ expense[2] }} - ${{ expense[3] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
